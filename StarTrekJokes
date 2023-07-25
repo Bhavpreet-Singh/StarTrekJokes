@@ -1,0 +1,61 @@
+-----HTML FILE ----
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="app.js"></script>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Star Trek Jokes</title>
+        <style>
+            img{
+                width: 300px;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Star Trek Jokes</h1>
+        <button id="jokeButton">Get a joke</button>
+        <p id="jokeText"></p>
+        <img id="jokeImage" src="" alt="Star Trek Image">
+
+    </body>
+</html>
+
+-----JAVASCSRIPT----
+const jokes = [
+    "Why did the borg cross the road? To assimilate the chicken!", 
+    "How do you know your're a true Star Trek fan?When you try to use a Vulcan mind meld to remember where you left your keys.",
+    "Why did the borg go on vacation?They wanted to be assimilated to a different culture.",
+    "What do you call a spaceship with a broken air-conditioner?A frying saucer!",
+    "Why did the Klingon break up with his girlfriend?She had no honor!",
+    "Why did worf change his hair color?It was a good day to dye!",
+    "Why don't the borg play cards?Poker is irrelevant!",
+    "Why did the Ferengi go to the doctor?His lobers were score!",
+    "What do you call a group of musicial Klingon-Quartet!",
+    "Why did the Vulcan go to therapy?He had emotional baggage!"
+];
+
+const images = [
+    "image1.jpg",
+    "image2.jpg",
+    "image3.jpg",
+    "image4.jpg",
+    "image5.jpg",
+    "image6.jpg",
+    "image7.jpg",
+    "image8.jpg",
+    "image9.jpg",
+    "image10.jpg"
+];
+$(document).ready(function() {
+    $("#jokeButton").click(function() {
+        const randomIndex = Math.floor(Math.random() * jokes.length);
+        $("#jokeText").text(jokes[randomIndex]);
+
+        const randomImageIndex = Math.floor(Math.random() * images.length);
+        $("#jokeImage").attr("src", images[randomImageIndex]);
+    });
+});
